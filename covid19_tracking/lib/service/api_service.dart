@@ -8,7 +8,7 @@ import 'package:intl/intl.dart';
 
 class ApiService {
   final Map<String, String> headers = {
-    "x-rapidapi-key": "d172e810e7msh47584ae043c146dp12d8eejsnb0b3c42c4a59",
+    "x-rapidapi-key": "RAPID_API_KEY",
     "x-rapidapi-host": "covid-19-data.p.rapidapi.com",
   };
 
