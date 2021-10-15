@@ -1,0 +1,16 @@
+1. Tạo mới 1 Project
+
+	`flutter create my_app`
+
+2. Chạy Project
+
+	`flutter run`
+
+3. Triển khai trên các thiết bị IOS
+   ( Có thể bỏ qua bước này nếu ứng dụng không phụ thuộc vào Flutter Plugin với mã IOS     gốc)
+	
+	`sudo gem install cocoapods`
+
+4. Kiểm tra các thành phần cần cài đặt
+
+	`flutter doctor`
