@@ -2,12 +2,14 @@ import 'package:cubit_state_managerment/base/app_square_button.dart';
 import 'package:cubit_state_managerment/base/app_large_text.dart';
 import 'package:cubit_state_managerment/base/app_text.dart';
 import 'package:cubit_state_managerment/configs/helpers/color_helpers.dart';
+import 'package:cubit_state_managerment/model/data_model.dart';
 import 'package:flutter/material.dart';
 
 class ContentData extends StatefulWidget {
   final int gottenStars;
+  final DataModel detail;
 
-  const ContentData({Key? key, required this.gottenStars}) : super(key: key);
+  const ContentData({Key? key, required this.gottenStars, required this.detail,}) : super(key: key);
 
   @override
   State<ContentData> createState() => _ContentDataState();
@@ -37,11 +39,11 @@ class _ContentDataState extends State<ContentData> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   AppLargeText(
-                      text: "Yosemite",
+                      text: widget.detail.name,
                       color: Colors.black54.withOpacity(0.8),
                       size: 26),
                   AppLargeText(
-                      text: "\$ 250", color: ColorHelpers.mainColor, size: 26),
+                      text: "\$ " + widget.detail.price.toString(), color: ColorHelpers.mainColor, size: 26),
                 ],
               ),
               SizedBox(height: 10),
@@ -49,7 +51,7 @@ class _ContentDataState extends State<ContentData> {
                 children: [
                   Icon(Icons.place, color: ColorHelpers.mainColor),
                   AppText(
-                      text: "USA, California", color: ColorHelpers.textColor1),
+                      text: widget.detail.location, color: ColorHelpers.textColor1),
                 ],
               ),
               SizedBox(height: 10),
@@ -58,13 +60,13 @@ class _ContentDataState extends State<ContentData> {
                   Wrap(
                     children: List.generate(5, (index) {
                       return Icon(Icons.star,
-                          color: index < widget.gottenStars
+                          color: index < widget.detail.stars
                               ? ColorHelpers.starColor
                               : ColorHelpers.textColor2);
                     }),
                   ),
                   SizedBox(width: 10),
-                  AppText(text: "(4.0)", color: ColorHelpers.textColor2),
+                  AppText(text: "${widget.detail.stars}" + ".0", color: ColorHelpers.textColor2),
                 ],
               ),
               SizedBox(height: 25),
@@ -117,8 +119,7 @@ class _ContentDataState extends State<ContentData> {
                           size: 20),
                       SizedBox(height: 5),
                       AppText(
-                        text:
-                            "Yosemite National Park is located in central Sierra Nevada in the US state of Califonia. It is located near the wild protected areas.",
+                        text: widget.detail.description,
                         size: 15,
                         color: ColorHelpers.mainTextColor,
                       ),

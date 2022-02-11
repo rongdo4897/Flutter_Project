@@ -2,8 +2,10 @@ import 'package:cubit_state_managerment/base/app_large_text.dart';
 import 'package:cubit_state_managerment/base/app_text.dart';
 import 'package:cubit_state_managerment/base/responsive_button.dart';
 import 'package:cubit_state_managerment/configs/helpers/color_helpers.dart';
+import 'package:cubit_state_managerment/cubit/app_cubits.dart';
 import 'package:cubit_state_managerment/screens/welcome/components/text_description.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class Body extends StatelessWidget {
   const Body({
@@ -42,7 +44,12 @@ class Body extends StatelessWidget {
                           text:
                               "Moutain hikes give you an incredible sense of freedom along with endurance test"),
                       SizedBox(height: 40),
-                      ResponsiveButton(width: 120)
+                      GestureDetector(
+                        onTap: ((){
+                          BlocProvider.of<AppCubits>(context).getData();
+                        }),
+                        child: ResponsiveButton(width: 120),
+                      )
                     ],
                   ),
                   Spacer(),

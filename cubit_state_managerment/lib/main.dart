@@ -1,3 +1,4 @@
+import 'package:cubit_state_managerment/configs/services/data_services.dart';
 import 'package:cubit_state_managerment/cubit/app_cubit_logics.dart';
 import 'package:cubit_state_managerment/cubit/app_cubits.dart';
 import 'package:cubit_state_managerment/screens/bottom_bar/bottom_bar_screen.dart';
@@ -33,7 +34,9 @@ class MyApp extends StatelessWidget {
       ),
       home: BlocProvider<AppCubits>(
         create: ((context){
-          return AppCubits();
+          return AppCubits(
+            data: DataServices(),
+          );
         }),
         child: AppCubitLogics(),
       )

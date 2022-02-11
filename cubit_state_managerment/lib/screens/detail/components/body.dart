@@ -5,6 +5,7 @@ import 'package:cubit_state_managerment/base/responsive_button.dart';
 import 'package:cubit_state_managerment/configs/helpers/color_helpers.dart';
 import 'package:cubit_state_managerment/configs/helpers/helper_link.dart';
 import 'package:cubit_state_managerment/configs/helpers/images_helper.dart';
+import 'package:cubit_state_managerment/model/data_model.dart';
 import 'package:cubit_state_managerment/screens/detail/components/button_expand.dart';
 import 'package:cubit_state_managerment/screens/detail/components/button_menu.dart';
 import 'package:cubit_state_managerment/screens/detail/components/content_data.dart';
@@ -12,7 +13,9 @@ import 'package:cubit_state_managerment/screens/detail/components/content_image.
 import 'package:flutter/material.dart';
 
 class Body extends StatelessWidget {
-  const Body({Key? key}) : super(key: key);
+  const Body({Key? key, required this.detail,}) : super(key: key);
+
+  final DataModel detail;
 
   @override
   Widget build(BuildContext context) {
@@ -21,10 +24,10 @@ class Body extends StatelessWidget {
       height: double.maxFinite,
       child: Stack(
         children: [
-          ContentImage(),
+          ContentImage(detail: detail),
           ButtonMenu(),
           ButtonExpand(),
-          ContentData(gottenStars: 3),
+          ContentData(gottenStars: 3, detail: detail),
           Positioned(
             left: 20,
             right: 20,

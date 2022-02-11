@@ -1,6 +1,10 @@
 import 'package:cubit_state_managerment/base/app_text.dart';
 import 'package:cubit_state_managerment/configs/helpers/color_helpers.dart';
+import 'package:cubit_state_managerment/cubit/app_cubit_state.dart';
+import 'package:cubit_state_managerment/cubit/app_cubits.dart';
+import 'package:cubit_state_managerment/model/data_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class Category extends StatelessWidget {
   const Category({

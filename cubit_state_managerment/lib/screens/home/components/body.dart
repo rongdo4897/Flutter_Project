@@ -3,6 +3,7 @@ import 'package:cubit_state_managerment/base/app_text.dart';
 import 'package:cubit_state_managerment/configs/helpers/color_helpers.dart';
 import 'package:cubit_state_managerment/configs/helpers/helper_link.dart';
 import 'package:cubit_state_managerment/configs/helpers/images_helper.dart';
+import 'package:cubit_state_managerment/model/data_model.dart';
 import 'package:cubit_state_managerment/screens/home/components/category.dart';
 import 'package:cubit_state_managerment/screens/home/components/circle_tab_indicator.dart';
 import 'package:cubit_state_managerment/screens/home/components/explore_more.dart';
@@ -12,7 +13,12 @@ import 'package:cubit_state_managerment/screens/home/components/tabbar.dart';
 import 'package:flutter/material.dart';
 
 class Body extends StatefulWidget {
-  const Body({Key? key}) : super(key: key);
+  List<DataModel> info;
+
+  Body({
+    Key? key,
+    required this.info,
+  }) : super(key: key);
 
   @override
   State<Body> createState() => _BodyState();
@@ -20,10 +26,10 @@ class Body extends StatefulWidget {
 
 class _BodyState extends State<Body> with TickerProviderStateMixin {
   var datas = {
-    "${HelperLink.image + ImageHelper.ic_balloning}" : "Balloning",
-    "${HelperLink.image + ImageHelper.ic_hiking}" : "Hiking",
-    "${HelperLink.image + ImageHelper.ic_kayaking}" : "Kayaking",
-    "${HelperLink.image + ImageHelper.ic_snorkling}" : "Snorkling",
+    "${HelperLink.image + ImageHelper.ic_balloning}": "Balloning",
+    "${HelperLink.image + ImageHelper.ic_hiking}": "Hiking",
+    "${HelperLink.image + ImageHelper.ic_kayaking}": "Kayaking",
+    "${HelperLink.image + ImageHelper.ic_snorkling}": "Snorkling",
   };
 
   @override
@@ -41,7 +47,7 @@ class _BodyState extends State<Body> with TickerProviderStateMixin {
               AppLargeText(text: "Discover", size: 30),
               SizedBox(height: 30),
               Tabbar(tabController: _tabController),
-              TabImageData(tabController: _tabController),
+              TabImageData(tabController: _tabController, info: widget.info),
               SizedBox(height: 30),
               ExploreMore(),
               SizedBox(height: 20),
