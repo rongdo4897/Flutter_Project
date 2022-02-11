@@ -37,6 +37,9 @@ dependencies:
   device_info_plus: ^3.2.1 # Lấy info device
   flutter_svg: ^0.22.0 # Sử dụng SVG trong app
   provider: ^5.0.0 # quản lý state
+  bloc:
+  flutter_bloc:
+  equatable: ^2.0.3
 
 
 dev_dependencies:
