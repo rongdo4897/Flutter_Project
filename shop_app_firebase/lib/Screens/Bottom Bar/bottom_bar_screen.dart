@@ -92,7 +92,7 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
               ),
               BottomNavigationBarItem(
                 backgroundColor: Colors.white,
-                icon: Icon(IconHelpers.cart),
+                icon: Icon(IconHelpers.bag),
                 label: "Cart",
               ),
               BottomNavigationBarItem(

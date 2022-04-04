@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 
 class IconHelpers {
-  static IconData home = Icons.home;
-  static IconData rss = Icons.rss_feed;
-  static IconData search = Icons.search;
-  static IconData cart = Icons.shopping_bag;
-  static IconData user = Icons.person;
+  static IconData home = Feather.home;
+  static IconData rss = Feather.rss;
+  static IconData search = Feather.search;
+  static IconData cart = MaterialCommunityIcons.cart;
+  static IconData user = Feather.user;
+  static IconData bag = Feather.shopping_bag;
 }

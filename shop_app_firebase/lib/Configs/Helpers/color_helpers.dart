@@ -16,6 +16,7 @@ class ColorHelpers {
   static Color gradiend_F_Start = Color(0xFFE040FB);
   static Color gradiend_F_End = Color(0xFFE1BEE7);
   static Color endColor = Color(0xFFCE93D8);
+  static Color endColor2 = Color(0xFFA0C2A9);
   static Color purple300 = Color(0xFFBA68C8);
   static Color gradiend_L_Start = Color(0xFFAA00FF);
   static Color gradiend_L_End = Color(0xAB47BC);
