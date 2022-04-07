@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app_firebase/Configs/Helpers/color_helpers.dart';
 import 'package:shop_app_firebase/Configs/Helpers/icon_helpers.dart';
 import 'package:shop_app_firebase/Screens/Cart/Components/cart_empty.dart';
 import 'package:shop_app_firebase/Screens/Cart/Components/cart_item.dart';
@@ -47,21 +48,32 @@ class Body extends StatelessWidget {
           children: [
             Expanded(
               flex: 2,
-              child: Material(
-                borderRadius: BorderRadius.circular(30),
-                color: Colors.red,
-                child: InkWell(
+              child: Container(
+                decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30),
-                  onTap: (() {}),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      "Checkout",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: Theme.of(context).textSelectionColor,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w600,
+                  gradient: LinearGradient(
+                    colors: [
+                      ColorHelpers.gradiend_L_Start,
+                      ColorHelpers.gradiend_L_End,
+                    ],
+                    stops: [0.0,0.7],
+                  ),
+                ),
+                child: Material(
+                  color: Colors.transparent,
+                  child: InkWell(
+                    borderRadius: BorderRadius.circular(30),
+                    onTap: (() {}),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        "Checkout",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Theme.of(context).textSelectionColor,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
                     ),
                   ),
